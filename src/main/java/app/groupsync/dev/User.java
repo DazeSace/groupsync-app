@@ -7,7 +7,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 
 
 @ApplicationScoped
@@ -17,10 +16,10 @@ public class User extends PanacheEntity {
 
     private String firstname;
     private String lastname;
-    private LocalDateTime birthday;
+    private String birthday;
 
     @Transactional
-    public static User userAdd(String firstname, String lastname, LocalDateTime birthday) {
+    public static User userAdd(String firstname, String lastname, String birthday) {
         var user = new User();
         user.setFirstname(firstname);
         user.setLastname(lastname);
@@ -45,11 +44,11 @@ public class User extends PanacheEntity {
         this.lastname = lastname;
     }
 
-    public LocalDateTime getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDateTime birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 }
