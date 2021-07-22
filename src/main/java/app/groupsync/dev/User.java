@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @ApplicationScoped
 @Default
 @Entity
-
 public class User extends PanacheEntity {
 
     private String firstname;
@@ -26,6 +25,7 @@ public class User extends PanacheEntity {
         user.setFirstname(firstname);
         user.setLastname(lastname);
         user.setBirthday(birthday);
+        user.persist();
         return user;
     }
 
