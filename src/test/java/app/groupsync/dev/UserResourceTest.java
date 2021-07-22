@@ -27,6 +27,4 @@ class UserResourceTest {
                 .then()
                 .statusCode(200);
     }
-
-
 }
