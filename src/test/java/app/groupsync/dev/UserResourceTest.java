@@ -1,5 +1,6 @@
 package app.groupsync.dev;
 
+import app.groupsync.dev.entities.User;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,8 @@ class UserResourceTest {
     void userRegister() {
         given()
                 .when()
-                .formParams("firstName", "Peter", "lastName", "Huber", "birthday", LocalDateTime.now().toString()).post("/user/register")
+                .formParams("firstName", "Jimmy", "lastName", "Choo", "birthday", LocalDateTime.now().toString())
+                .post("/user/register")
                 .then()
                 .statusCode(200);
     }

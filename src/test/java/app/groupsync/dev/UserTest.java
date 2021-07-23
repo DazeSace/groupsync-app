@@ -1,5 +1,6 @@
 package app.groupsync.dev;
 
+import app.groupsync.dev.entities.User;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

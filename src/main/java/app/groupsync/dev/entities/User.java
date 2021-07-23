@@ -1,4 +1,4 @@
-package app.groupsync.dev;
+package app.groupsync.dev.entities;
 
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;

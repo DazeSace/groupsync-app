@@ -1,4 +1,6 @@
-package app.groupsync.dev;
+package app.groupsync.dev.resources;
+
+import app.groupsync.dev.entities.User;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
