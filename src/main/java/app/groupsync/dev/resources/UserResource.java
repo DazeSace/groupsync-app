@@ -21,4 +21,13 @@ public class UserResource {
     ) {
         return User.userAdd(firstName, lastName, birthday);
     }
+
+    @Path("/getById")
+    @GET
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    public User getById( @FormParam("id") int id){
+        return User.findById(id);
+    }
 }

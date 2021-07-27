@@ -1,4 +1,4 @@
-package app.groupsync.dev;
+package app.groupsync.dev.resources;
 
 import app.groupsync.dev.entities.User;
 import io.quarkus.test.junit.QuarkusTest;
@@ -29,4 +29,6 @@ class UserResourceTest {
                 .then()
                 .statusCode(200);
     }
+
+
 }

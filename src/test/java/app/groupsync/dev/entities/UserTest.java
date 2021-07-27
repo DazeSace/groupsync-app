@@ -1,4 +1,4 @@
-package app.groupsync.dev;
+package app.groupsync.dev.entities;
 
 import app.groupsync.dev.entities.User;
 import io.quarkus.test.junit.QuarkusTest;
