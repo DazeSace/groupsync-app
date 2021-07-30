@@ -19,7 +19,7 @@ public class Offer extends PanacheEntity {
     private String location;
 
     @Transactional
-    public static Offer userOffer(String offerer, String name, int capacity, float price, float length, String location) {
+    public static Offer createOffer(String offerer, String name, int capacity, float price, float length, String location) {
         var offer = new Offer();
         offer.setOfferer(offerer);
         offer.setName(name);

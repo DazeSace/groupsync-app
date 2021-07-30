@@ -27,7 +27,7 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public User getById( @FormParam("id") int id){
-        return User.findById(id);
+    public User getById( @FormParam("id") String id){
+        return User.findByUuid(id);
     }
 }
