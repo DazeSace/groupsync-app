@@ -5,7 +5,9 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.transaction.Transactional;
+import java.util.UUID;
 
 @ApplicationScoped
 @Default
@@ -17,6 +19,7 @@ public class Offer extends PanacheEntity {
     private float price;
     private float length;
     private String location;
+    private String uuid;
 
     @Transactional
     public static Offer createOffer(String offerer, String name, int capacity, float price, float length, String location) {
@@ -27,8 +30,13 @@ public class Offer extends PanacheEntity {
         offer.setPrice(price);
         offer.setLength(length);
         offer.setLocation(location);
+        offer.setUuid(generateUuid());
         offer.persist();
         return offer;
+    }
+
+    public static Offer findByUuid(String uuid) {
+        return find("uuid", uuid).firstResult();
     }
 
     public String getOfferer() {
@@ -77,5 +85,22 @@ public class Offer extends PanacheEntity {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    @Id
+    public String getUuid() {
+        return uuid;
+    }
+
+    private static String generateUuid() {
+        UUID uuid;
+        do {
+            uuid = UUID.randomUUID();
+        } while (findByUuid(uuid.toString()) != null);
+        return uuid.toString();
     }
 }

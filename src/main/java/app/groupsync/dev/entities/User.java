@@ -20,13 +20,13 @@ public class User extends PanacheEntityBase {
     private String birthday;
     private String uuid;
 
-
     @Transactional
     public static User userAdd(String firstname, String lastname, String birthday) {
         var user = new User();
         user.setFirstname(firstname);
         user.setLastname(lastname);
         user.setBirthday(birthday);
+        user.setUuid(generateUuid());
         user.persist();
         return user;
     }

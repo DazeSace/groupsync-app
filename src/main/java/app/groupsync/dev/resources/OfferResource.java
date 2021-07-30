@@ -31,7 +31,7 @@ public class OfferResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public Offer getById(@FormParam("id") int id) {
-        return Offer.findById(id);
+    public Offer getById(@FormParam("uuid") String uuid) {
+        return Offer.findByUuid(uuid);
     }
 }
