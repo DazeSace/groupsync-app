@@ -5,6 +5,7 @@ import app.groupsync.dev.entities.User;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/user")
 public class UserResource {
@@ -29,5 +30,14 @@ public class UserResource {
     @Transactional
     public User getById( @FormParam("id") String id){
         return User.findByUuid(id);
+    }
+
+    @Path("/getAll")
+    @GET
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    public List<User> getAllUser(){
+        return User.getAll();
     }
 }

@@ -1,18 +1,19 @@
 package app.groupsync.dev.entities;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.UUID;
 
 @ApplicationScoped
 @Default
 @Entity
-public class Offer extends PanacheEntity {
+public class Offer extends PanacheEntityBase {
     private String offerer;
     private String name;
     private int capacity;
@@ -38,6 +39,12 @@ public class Offer extends PanacheEntity {
     public static Offer findByUuid(String uuid) {
         return find("uuid", uuid).firstResult();
     }
+
+    public static List<Offer> getAll() {
+        return listAll();
+    }
+
+    // Getter and Setter
 
     public String getOfferer() {
         return offerer;

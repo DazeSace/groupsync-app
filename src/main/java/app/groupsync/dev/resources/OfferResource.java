@@ -5,6 +5,7 @@ import app.groupsync.dev.entities.Offer;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/offer")
 public class OfferResource {
@@ -33,5 +34,14 @@ public class OfferResource {
     @Transactional
     public Offer getById(@FormParam("uuid") String uuid) {
         return Offer.findByUuid(uuid);
+    }
+
+    @Path("/getAll")
+    @GET
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    public List<Offer> getAllOffer(){
+        return Offer.getAll();
     }
 }

@@ -7,6 +7,7 @@ import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -34,6 +35,12 @@ public class User extends PanacheEntityBase {
     public static User findByUuid(String uuid) {
         return find("uuid", uuid).firstResult();
     }
+
+    public static List<User> getAll(){
+        return listAll();
+    }
+
+    //Getter and Setter
 
     public String getFirstname() {
         return firstname;
