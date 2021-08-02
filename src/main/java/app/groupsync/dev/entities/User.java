@@ -22,7 +22,7 @@ public class User extends PanacheEntityBase {
     private String uuid;
 
     @Transactional
-    public static User userAdd(String firstname, String lastname, String birthday) {
+    public static User create(String firstname, String lastname, String birthday) {
         var user = new User();
         user.setFirstname(firstname);
         user.setLastname(lastname);

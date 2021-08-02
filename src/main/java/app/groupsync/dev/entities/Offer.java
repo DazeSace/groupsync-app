@@ -23,7 +23,7 @@ public class Offer extends PanacheEntityBase {
     private String uuid;
 
     @Transactional
-    public static Offer createOffer(String offerer, String name, int capacity, double price, double length, String location) {
+    public static Offer create(String offerer, String name, int capacity, double price, double length, String location) {
         var offer = new Offer();
         offer.setOfferer(offerer);
         offer.setName(name);

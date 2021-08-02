@@ -20,15 +20,15 @@ public class UserResource {
             @FormParam("lastName") String lastName,
             @FormParam("birthday") String birthday
     ) {
-        return User.userAdd(firstName, lastName, birthday);
+        return User.create(firstName, lastName, birthday);
     }
 
     @Path("/getById")
-    @GET
+    @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public User getById( @FormParam("id") String id){
+    public User getById( @FormParam("uuid") String id){
         return User.findByUuid(id);
     }
 

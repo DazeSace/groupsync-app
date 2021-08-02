@@ -24,7 +24,7 @@ public class OfferResource {
             @FormParam("location") String location
 
     ) {
-        return Offer.createOffer(offerer, name, capacity, price, length, location);
+        return Offer.create(offerer, name, capacity, price, length, location);
     }
 
     @Path("/getById")

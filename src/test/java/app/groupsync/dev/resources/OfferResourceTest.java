@@ -21,7 +21,7 @@ class OfferResourceTest {
     }
 
     Offer createTestOffer(String offerer, String name) {
-        return Offer.createOffer(offerer, name, 5, 4.5, 4.5, "Konstanz");
+        return Offer.create(offerer, name, 5, 4.5, 4.5, "Konstanz");
     }
 
     @Test

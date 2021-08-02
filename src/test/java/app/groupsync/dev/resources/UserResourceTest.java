@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 class UserResourceTest {
@@ -18,6 +19,10 @@ class UserResourceTest {
     @Transactional
     void setup() {
         User.deleteAll();
+    }
+
+    User createTestUser() {
+        return User.create("Jongo", "Jängo", "2000-09-15");
     }
 
     @Test
@@ -30,5 +35,27 @@ class UserResourceTest {
                 .statusCode(200);
     }
 
+    @Test
+    void getAllUsers() {
+        for (int i = 0; i < 2; i++) {
+            createTestUser();
+        }
+        given()
+                .when()
+                .get("/user/getAll")
+                .then()
+                .statusCode(200)
+                .body("$.size()", is(2));
+    }
 
+    @Test
+    void getUserByUuid() {
+        User user1 = createTestUser();
+        given()
+                .when()
+                .formParams("uuid", user1.getUuid())
+                .post("/user/getById")
+                .then()
+                .statusCode(200);
+    }
 }
