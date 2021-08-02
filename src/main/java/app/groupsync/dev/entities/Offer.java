@@ -17,13 +17,13 @@ public class Offer extends PanacheEntityBase {
     private String offerer;
     private String name;
     private int capacity;
-    private float price;
-    private float length;
+    private double price;
+    private double length;
     private String location;
     private String uuid;
 
     @Transactional
-    public static Offer createOffer(String offerer, String name, int capacity, float price, float length, String location) {
+    public static Offer createOffer(String offerer, String name, int capacity, double price, double length, String location) {
         var offer = new Offer();
         offer.setOfferer(offerer);
         offer.setName(name);
@@ -70,19 +70,19 @@ public class Offer extends PanacheEntityBase {
         this.capacity = capacity;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public float getLength() {
+    public double getLength() {
         return length;
     }
 
-    public void setLength(float length) {
+    public void setLength(double length) {
         this.length = length;
     }
 

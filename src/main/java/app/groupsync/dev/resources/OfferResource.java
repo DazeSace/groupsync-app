@@ -28,7 +28,7 @@ public class OfferResource {
     }
 
     @Path("/getById")
-    @GET
+    @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
@@ -41,7 +41,7 @@ public class OfferResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public List<Offer> getAllOffer(){
+    public List<Offer> getAllOffer() {
         return Offer.getAll();
     }
 }
