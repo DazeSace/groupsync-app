@@ -27,17 +27,24 @@ class UserResourceTest {
 
     @Test
     void userRegister() {
+        String birthday = LocalDateTime.now().toString();
         given()
                 .when()
-                .formParams("firstName", "Jimmy", "lastName", "Choo", "birthday", LocalDateTime.now().toString())
+                .formParams("firstName", "Jimmy")
+                .formParams("lastName", "Choo")
+                .formParams("birthday", birthday)
                 .post("/user/register")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .body("firstname", is("Jimmy"))
+                .body("lastname", is("Choo"))
+                .body("birthday", is(birthday));
     }
 
     @Test
     void getAllUsers() {
-        for (int i = 0; i < 2; i++) {
+        int userCount = 2;
+        for (int i = 0; i < userCount; i++) {
             createTestUser();
         }
         given()
@@ -45,7 +52,7 @@ class UserResourceTest {
                 .get("/user/getAll")
                 .then()
                 .statusCode(200)
-                .body("$.size()", is(2));
+                .body("$.size()", is(userCount));
     }
 
     @Test
@@ -56,6 +63,7 @@ class UserResourceTest {
                 .formParams("uuid", user1.getUuid())
                 .post("/user/getById")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .body("uuid", is(user1.getUuid()));
     }
 }
