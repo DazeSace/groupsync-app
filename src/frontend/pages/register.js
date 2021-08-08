@@ -1,19 +1,13 @@
 import React from "react";
-import {Container, MuiThemeProvider} from "@material-ui/core";
-import DefaultTheme from "../styles/DefaultTheme"
-import TopAppBar from "../components/TopAppBar";
+import {Container} from "@material-ui/core";
+
 
 
 const Register = () => {
     return (
-        <>
-            <MuiThemeProvider theme={DefaultTheme}>
-                <TopAppBar/>
-                <Container >
-                    <p>Hoes</p>
-                </Container>
-            </MuiThemeProvider>
-        </>
+        <Container maxWidth={"lg"}>
+            <p>Hoes</p>
+        </Container>
     )
 }
 

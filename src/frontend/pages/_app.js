@@ -1,3 +1,5 @@
+import "../styles/styles.css"
+
 const _app = ({Component, pageProps}) => {
     return <Component {...pageProps} />
 }

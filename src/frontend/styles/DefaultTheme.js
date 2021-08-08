@@ -1,5 +1,7 @@
 import {createTheme} from "@material-ui/core";
 import Palette from "./Palette";
+import '@fontsource/roboto/700.css';
+
 
 const appBarMargin = 15
 
@@ -9,6 +11,9 @@ const DefaultTheme = createTheme({
             root: {
                 backgroundColor: Palette.palette.secondary.light,
             },
+            maxWidthLg:{
+              marginTop: 100
+            },
             maxWidthXl: {
                 background: Palette.palette.primary.main,
             }
@@ -16,9 +21,8 @@ const DefaultTheme = createTheme({
         MuiTypography: {
             h2: {
                 color: Palette.palette.info.main,
-                fontFamily: "sans-serif",
+                fontFamily: "Roboto",
                 fontSize: "xx-large",
-                fontWeight: "bolder",
                 marginTop: appBarMargin,
                 marginBottom: appBarMargin
             }
@@ -30,8 +34,8 @@ const DefaultTheme = createTheme({
             colorDefault: {
                 backgroundColor: Palette.palette.primary.main
             },
-            colorPrimary: {
-                background: Palette.palette.primary.main
+            colorSecondary: {
+                background: "transparent"
             }
 
         }

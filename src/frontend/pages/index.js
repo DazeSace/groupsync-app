@@ -1,5 +1,9 @@
 import Head from 'next/head'
 import Register from "./register";
+import DefaultTheme from "../styles/DefaultTheme";
+import TopAppBar from "../components/TopAppBar";
+import React from "react";
+import {MuiThemeProvider} from "@material-ui/core";
 
 const Home = () => {
     return (
@@ -10,7 +14,10 @@ const Home = () => {
                 <link rel="icon" href={"/favicon.ico"}/>
             </Head>
             <main>
-                <Register/>
+                <MuiThemeProvider theme={DefaultTheme}>
+                    <TopAppBar/>
+                    <Register/>
+                </MuiThemeProvider>
             </main>
         </div>
     )
