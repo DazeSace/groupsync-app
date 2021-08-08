@@ -8,7 +8,7 @@ const Palette = createTheme({
         secondary: {
             main: "#FFEEDB"
         },
-        ternary: {
+        info: {
             main: "#202C39"
         }
     }

@@ -1,13 +1,15 @@
 import React from "react";
 import {Container, MuiThemeProvider} from "@material-ui/core";
 import DefaultTheme from "../styles/DefaultTheme"
+import TopAppBar from "../components/TopAppBar";
 
 
 const Register = () => {
-    return(
+    return (
         <>
             <MuiThemeProvider theme={DefaultTheme}>
-                <Container>
+                <TopAppBar/>
+                <Container >
                     <p>Hoes</p>
                 </Container>
             </MuiThemeProvider>
