@@ -11,8 +11,11 @@ const DefaultTheme = createTheme({
             root: {
                 backgroundColor: Palette.palette.secondary.light,
             },
-            maxWidthLg:{
-              marginTop: 100
+            maxWidthXs: {
+                marginTop: 100
+            },
+            maxWidthLg: {
+                marginTop: 100
             },
             maxWidthXl: {
                 background: Palette.palette.primary.main,
@@ -25,7 +28,15 @@ const DefaultTheme = createTheme({
                 fontSize: "xx-large",
                 marginTop: appBarMargin,
                 marginBottom: appBarMargin
-            }
+            },
+            h4: {
+                color: Palette.palette.info.main,
+                fontFamily: "Roboto",
+            },
+            h5: {
+                color: Palette.palette.info.main,
+                fontFamily: "Roboto",
+            },
         },
         MuiAppBar: {
             root: {
@@ -37,8 +48,25 @@ const DefaultTheme = createTheme({
             colorSecondary: {
                 background: "transparent"
             }
-
-        }
+        },
+        MuiCard: {
+            root: {}
+        },
+        MuiCardHeader: {
+            root: {
+                paddingBottom: 0
+            },
+            title: {
+                color: Palette.palette.info.main,
+                alignItems: "center",
+            }
+        },
+        MuiTextField: {
+            root: {
+                borderColor: "aliceblue",
+                marginBottom: 10
+            }
+        },
     }
 })
 
