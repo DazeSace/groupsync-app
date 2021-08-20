@@ -2,7 +2,7 @@ import Head from 'next/head'
 import DefaultTheme from "../styles/DefaultTheme";
 import TopAppBar from "../components/TopAppBar";
 import React from "react";
-import {Container, Link, MuiThemeProvider} from "@material-ui/core";
+import {Button, Container, Grid, MuiThemeProvider} from "@material-ui/core";
 
 const Home = () => {
     return (
@@ -16,9 +16,18 @@ const Home = () => {
                 <MuiThemeProvider theme={DefaultTheme}>
                     <TopAppBar/>
                     <Container>
-                        <Link href={"/register"}>
-                            Registrieren
-                        </Link>
+                        <Grid container spacing={1} alignItems={"center"} justifyContent={"center"}>
+                            <Grid item xs={3}>
+                                <Button href={"/login"} fullWidth>
+                                    Anmelden
+                                </Button>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Button href={"/register"} fullWidth>
+                                    Registrieren
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Container>
                 </MuiThemeProvider>
             </main>

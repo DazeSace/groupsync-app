@@ -12,7 +12,7 @@ const DefaultTheme = createTheme({
                 backgroundColor: Palette.palette.secondary.light,
             },
             maxWidthXs: {
-                marginTop: 100
+                marginTop: 100,
             },
             maxWidthLg: {
                 marginTop: 100
@@ -24,6 +24,12 @@ const DefaultTheme = createTheme({
         MuiTypography: {
             colorPrimary: {
                 color: Palette.palette.primary.main
+            },
+            colorSecondary: {
+                color: Palette.palette.info.main
+            },
+            body1: {
+                textAlign: "center",
             },
             h2: {
                 color: Palette.palette.info.main,
@@ -106,6 +112,7 @@ const DefaultTheme = createTheme({
             }
         },
         MuiButton: {
+
             fullWidth: {
                 background: Palette.palette.primary.main,
                 marginBottom: 16,
@@ -118,17 +125,11 @@ const DefaultTheme = createTheme({
                 "&:focus": {
                     background: Palette.palette.primary.main,
                 },
-                "&label": {
-                    color: Palette.palette.info.main,
-                }
-            },
-            label: {
-                color: "inherit"
             },
             textPrimary: {
                 color: Palette.palette.primary.main
-            }
-        }
+            },
+        },
     }
 })
 
