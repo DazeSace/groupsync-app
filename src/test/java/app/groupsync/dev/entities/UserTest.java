@@ -23,21 +23,21 @@ class UserTest {
 
     @Test
     void addUserTest() {
-        User.create("Jimmy", "Choo", LocalDateTime.now().toString());
+        User.create("Jimmy", "Choo", LocalDateTime.now().toString(), "test@dev.de", "password");
         List<User> users = User.listAll();
         assertEquals(1, users.size());
     }
 
     @Test
     void userHasFirstname() {
-        User.create("Jimmy", "Choo", LocalDateTime.now().toString());
+        User.create("Jimmy", "Choo", LocalDateTime.now().toString(), "test@dev.de", "password");
         List<User> users = User.listAll();
         assertEquals("Jimmy", users.get(0).getFirstname());
     }
 
     @Test
     void userHasLastname() {
-        User.create("Jimmy", "Choo", LocalDateTime.now().toString());
+        User.create("Jimmy", "Choo", LocalDateTime.now().toString(), "test@dev.de", "password");
         List<User> users = User.listAll();
         assertEquals("Choo", users.get(0).getLastname());
     }
@@ -45,15 +45,15 @@ class UserTest {
     @Test
     void userHasBirthdate() {
         var birthday = LocalDateTime.now().toString();
-        User.create("Jimmy", "Choo", birthday);
+        User.create("Jimmy", "Choo", birthday, "test@dev.de", "password");
         List<User> users = User.listAll();
         assertEquals(birthday, users.get(0).getBirthday());
     }
 
     @Test
     void getAllUsers() {
-        User.create("Jimmy", "Choo", LocalDateTime.now().toString());
-        User.create("Jerry", "Boo", LocalDateTime.now().toString());
+        User.create("Jimmy", "Choo", LocalDateTime.now().toString(), "test@dev.de", "password");
+        User.create("Jerry", "Boo", LocalDateTime.now().toString(), "test@dev.de", "password");
         List<User> users = User.getAll();
         assertEquals(2, users.size());
     }

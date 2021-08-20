@@ -22,7 +22,7 @@ class UserResourceTest {
     }
 
     User createTestUser() {
-        return User.create("Jongo", "Jängo", "2000-09-15");
+        return User.create("Jongo", "Jängo", "2000-09-15", "test@dev.de", "password");
     }
 
     @Test

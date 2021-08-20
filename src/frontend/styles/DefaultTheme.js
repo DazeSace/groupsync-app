@@ -115,7 +115,6 @@ const DefaultTheme = createTheme({
 
             fullWidth: {
                 background: Palette.palette.primary.main,
-                marginBottom: 16,
                 "&:hover": {
                     backgroundColor: Palette.palette.primary.light,
                 },

@@ -10,6 +10,9 @@ const Palette = createTheme({
         },
         info: {
             main: "#202C39"
+        },
+        error: {
+            main: "#F93943"
         }
     }
 })

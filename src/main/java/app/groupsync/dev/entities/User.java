@@ -20,13 +20,17 @@ public class User extends PanacheEntityBase {
     private String lastname;
     private String birthday;
     private String uuid;
+    private String email;
+    private String password;
 
     @Transactional
-    public static User create(String firstname, String lastname, String birthday) {
+    public static User create(String firstname, String lastname, String birthday, String email, String password) {
         var user = new User();
         user.setFirstname(firstname);
         user.setLastname(lastname);
         user.setBirthday(birthday);
+        user.setEmail(email);
+        user.setPassword(password);
         user.setUuid(generateUuid());
         user.persist();
         return user;
@@ -36,7 +40,7 @@ public class User extends PanacheEntityBase {
         return find("uuid", uuid).firstResult();
     }
 
-    public static List<User> getAll(){
+    public static List<User> getAll() {
         return listAll();
     }
 
@@ -73,6 +77,22 @@ public class User extends PanacheEntityBase {
     @Id
     public String getUuid() {
         return uuid;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     private static String generateUuid() {
