@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import Register from "./register";
 import DefaultTheme from "../styles/DefaultTheme";
 import TopAppBar from "../components/TopAppBar";
 import React from "react";
-import {MuiThemeProvider} from "@material-ui/core";
+import {Container, Link, MuiThemeProvider} from "@material-ui/core";
 
 const Home = () => {
     return (
@@ -16,7 +15,11 @@ const Home = () => {
             <main>
                 <MuiThemeProvider theme={DefaultTheme}>
                     <TopAppBar/>
-                    <Register/>
+                    <Container>
+                        <Link href={"/register"}>
+                            Registrieren
+                        </Link>
+                    </Container>
                 </MuiThemeProvider>
             </main>
         </div>

@@ -1,11 +1,13 @@
 import React from "react";
-import {AppBar, Container, Typography} from "@material-ui/core";
+import {AppBar, Container, Link, Typography} from "@material-ui/core";
 
 const TopAppBar = () => {
     return (
         <AppBar position={"fixed"} color={"default"}>
             <Container maxWidth={"xl"}>
-                <Typography variant={"h2"}>groupsync.</Typography>
+                <Link href={"/"} style={{textDecoration: "none"}}>
+                    <Typography variant={"h2"}>groupsync.</Typography>
+                </Link>
             </Container>
         </AppBar>
     )

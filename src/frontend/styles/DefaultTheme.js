@@ -22,12 +22,20 @@ const DefaultTheme = createTheme({
             }
         },
         MuiTypography: {
+            colorPrimary: {
+                color: Palette.palette.primary.main
+            },
             h2: {
                 color: Palette.palette.info.main,
                 fontFamily: "Roboto",
                 fontSize: "xx-large",
                 marginTop: appBarMargin,
-                marginBottom: appBarMargin
+                marginBottom: appBarMargin,
+                maxWidth: "fit-content",
+                transition: "all .2s ease-in-out",
+                "&:hover": {
+                    transform: "scale(1.05, 1.05)",
+                },
             },
             h4: {
                 color: Palette.palette.info.main,
@@ -63,10 +71,64 @@ const DefaultTheme = createTheme({
         },
         MuiTextField: {
             root: {
-                borderColor: "aliceblue",
-                marginBottom: 10
+                marginBottom: 10,
             }
         },
+        MuiFormLabel: {
+            root: {
+                color: Palette.palette.info.light,
+                "&.Mui-focused": {
+                    color: Palette.palette.info.main,
+                }
+            }
+        },
+        MuiInput: {
+            root: {
+                color: Palette.palette.info.main,
+            }
+        },
+        MuiPickersToolbar: {
+            toolbar: {
+                backgroundColor: Palette.palette.primary.main
+            }
+        },
+        MuiPickersDay: {
+            daySelected: {
+                backgroundColor: Palette.palette.primary.main,
+                "&:hover": {
+                    backgroundColor: Palette.palette.primary.dark
+                }
+            },
+        },
+        MuiPickersMonth: {
+            monthSelected: {
+                color: Palette.palette.primary.main
+            }
+        },
+        MuiButton: {
+            fullWidth: {
+                background: Palette.palette.primary.main,
+                marginBottom: 16,
+                "&:hover": {
+                    backgroundColor: Palette.palette.primary.light,
+                },
+                "&:active": {
+                    background: Palette.palette.primary.dark,
+                },
+                "&:focus": {
+                    background: Palette.palette.primary.main,
+                },
+                "&label": {
+                    color: Palette.palette.info.main,
+                }
+            },
+            label: {
+                color: "inherit"
+            },
+            textPrimary: {
+                color: Palette.palette.primary.main
+            }
+        }
     }
 })
 
