@@ -13,9 +13,9 @@ import java.util.UUID;
 
 @ApplicationScoped
 @Default
-@Table
+@Table(name = "offer", schema = "xxx")
 @Entity
-public class Offer extends PanacheEntityBase {
+public class Offer extends PanacheEntityBase{
     private String offerer;
     private String name;
     private int capacity;

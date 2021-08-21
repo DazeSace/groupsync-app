@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @ApplicationScoped
 @Default
-@Table
+@Table(name="user", schema = "xxx")
 @Entity
 public class User extends PanacheEntityBase {
 
