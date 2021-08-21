@@ -99,6 +99,7 @@ public class Offer extends PanacheEntityBase {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
+
     @Id
     public String getUuid() {
         return uuid;
