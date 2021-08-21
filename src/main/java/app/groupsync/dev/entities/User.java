@@ -105,4 +105,7 @@ public class User extends PanacheEntityBase {
         return uuid.toString();
     }
 
+    public String getEmail() {
+        return email;
+    }
 }

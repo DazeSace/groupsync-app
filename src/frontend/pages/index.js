@@ -17,12 +17,12 @@ const Home = () => {
                     <TopAppBar/>
                     <Container>
                         <Grid container spacing={1} alignItems={"center"} justifyContent={"center"}>
-                            <Grid item xs={3}>
+                            <Grid item xs={5} sm={4} md={3}>
                                 <Button href={"/login"} fullWidth>
                                     Anmelden
                                 </Button>
                             </Grid>
-                            <Grid item xs={3}>
+                            <Grid item xs={5} sm={4} md={3}>
                                 <Button href={"/register"} fullWidth>
                                     Registrieren
                                 </Button>
