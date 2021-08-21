@@ -40,8 +40,14 @@ public class User extends PanacheEntityBase {
         return find("uuid", uuid).firstResult();
     }
 
+    public static User findByEmail(String email) { return find("email", email).firstResult();}
+
     public static List<User> getAll() {
         return listAll();
+    }
+
+    public boolean checkPassword(String password){
+        return password.equals(getPassword());
     }
 
     //Getter and Setter
@@ -77,10 +83,6 @@ public class User extends PanacheEntityBase {
     @Id
     public String getUuid() {
         return uuid;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setEmail(String email) {
