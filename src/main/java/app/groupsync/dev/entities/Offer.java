@@ -22,6 +22,7 @@ public class Offer extends PanacheEntityBase {
     private double price;
     private double length;
     private String location;
+    @Id
     private String uuid;
 
     @Transactional
@@ -100,7 +101,6 @@ public class Offer extends PanacheEntityBase {
         this.uuid = uuid;
     }
 
-    @Id
     public String getUuid() {
         return uuid;
     }
